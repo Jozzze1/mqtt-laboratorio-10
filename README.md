@@ -22,11 +22,7 @@ python publisher_reto.py
 
 ¿Por qué no es viable utilizar una arquitectura síncrona HTTP REST para interconectar miles de sensores industriales que reportan datos cada pocos segundos?
 
-No sería viable porque cada sensor tendría que enviar solicitudes constantemente al servidor mediante HTTP. Si existen miles de sensores reportando información cada pocos segundos, el servidor tendría que atender una gran cantidad de peticiones al mismo tiempo, consumiendo muchos recursos como memoria, procesador y conexiones.
-
-Además, HTTP genera más tráfico debido a que sus cabeceras son más grandes. En cambio, MQTT fue diseñado para dispositivos IoT y utiliza paquetes mucho más pequeños, lo que reduce el uso de la red.
-
-Por estas razones, MQTT resulta más adecuado para sistemas industriales, ya que permite una comunicación más eficiente y escalable mediante el modelo Publicador-Suscriptor, donde los sensores envían datos al broker sin conectarse directamente con cada receptor.
+No sería viable porque cada sensor tendría que enviar solicitudes constantemente al servidor mediante HTTP. Si existen miles de sensores reportando información cada pocos segundos, el servidor tendría que atender una gran cantidad de peticiones al mismo tiempo, consumiendo muchos recursos como memoria, procesador y conexiones. En cambio el MQTT fue diseñado para dispositivos IoT y utiliza paquetes mucho más pequeños, lo que reduce el uso de la red.
 
 2. Pregunta Práctica
 
@@ -34,17 +30,11 @@ Por estas razones, MQTT resulta más adecuado para sistemas industriales, ya que
 
 QoS 2 debe utilizarse cuando es muy importante que un mensaje llegue exactamente una vez y no pueda perderse ni duplicarse.
 
-Por ejemplo:
-
-Transferencias bancarias.
-Registro de pagos.
-Facturación electrónica.
-Sistemas de seguridad industrial.
-Control de inventarios de medicamentos.
+Por ejemplo: Transferencias bancarias o registro de pagos.
 
 En estos casos, un mensaje duplicado o perdido podría generar errores importantes.
 
-Por otro lado, QoS 0 puede utilizarse en aplicaciones donde perder alguna lectura ocasional no representa un problema grave, como sensores de temperatura, humedad o monitoreo ambiental.
+En cambio, el QoS 0 puede utilizarse en aplicaciones donde perder alguna lectura ocasional no representa un problema grave, como sensores de temperatura, humedad o monitoreo ambiental.
 
 3. Reflexión Ética y RSU
 
@@ -52,9 +42,7 @@ Por otro lado, QoS 0 puede utilizarse en aplicaciones donde perder alguna lectur
 
 MQTT contribuye a la sostenibilidad porque utiliza menos ancho de banda y menos recursos para transmitir información. Esto permite que los dispositivos consuman menos energía y funcionen mejor incluso con conexiones lentas o inestables.
 
-En muchas zonas rurales del Perú la conectividad es limitada, por lo que un protocolo ligero como MQTT facilita implementar soluciones de monitoreo agrícola, ambiental o de cadena de frío sin requerir una infraestructura costosa.
-
-Además, al reducir el tráfico de datos y el procesamiento necesario en los servidores, también disminuye el consumo energético y el impacto ambiental de los sistemas tecnológicos.
+En muchas zonas rurales del Perú la conectividad es limitada y deficiente, por lo que un protocolo ligero como MQTT facilita implementar soluciones de monitoreo agrícola, ambiental o de cadena de frío sin requerir una infraestructura costosa.
 
 Conclusión
 
