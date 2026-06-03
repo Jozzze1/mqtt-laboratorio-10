@@ -3,20 +3,6 @@
 ## Alumno
 - Pacara Ponciano Jose Miguel
 
-## Ejecución
-
-## Instalar dependencias:
-
-pip install paho-mqtt pydantic
-
-## Ejecutar suscriptor:
-
-python subscriber_reto.py
-
-## Ejecutar publicador:
-
-python publisher_reto.py
-
 ## Cuestionario:
 1. Pregunta Critica
 
